@@ -1,5 +1,5 @@
 {
-  "name": "gestor-de-negocio",
+  "name": "gestor-de-negocio-api",
   "version": "1.0.0",
   "description": "Proyecto para gestionar un negocio pequeño",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./index.js"
   },
-  "author": "Isaac Navarro y Jesús Pertuz",
+  "author": "Isaac Navarro, Jesús Molina y Jesús Pertuz",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.0.3"
