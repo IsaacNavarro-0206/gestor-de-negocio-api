@@ -4,7 +4,7 @@ import { Product } from "../models/product.js";
 const createProduct = async (req, res, next) => {
   try {
     await Product.create({
-      id: req.body.id,
+      //id: req.body.id,
       id_categoria: req.body.id_categoria,
       nombre: req.body.nombre,
       // fecha_registro: req.body.fecha_registro,

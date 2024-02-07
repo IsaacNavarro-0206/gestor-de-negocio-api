@@ -33,6 +33,7 @@ async function main() {
 
     app.use("/incomeExpenses", routerIncomeExpenses);
     app.use("/product", routuerProduct);
+    app.use("/categoryProduct", routuerProduct);
   } catch (error) {
     console.error("no se puede conectar a la base de datos", error);
   }
