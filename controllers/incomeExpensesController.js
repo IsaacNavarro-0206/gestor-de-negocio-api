@@ -18,7 +18,7 @@ const createIncomeOrExpense = async (req, res, next) => {
 };
 
 //Obtiene todos los Contactos
-const getIncomeOrExpenses = async (req, res, next) => {
+const getAllIncomeOrExpenses = async (req, res, next) => {
   try {
     const incomeOrExpense = await IncomeExpenses.findAll({
       attributes: { exclude: ["createdAt", "updatedAt"] },
@@ -32,7 +32,7 @@ const getIncomeOrExpenses = async (req, res, next) => {
 };
 
 //Obtiene un IncomeExpenses en especifico por su ID
-const getEntryOrExit = async (req, res, next) => {
+const getIncomeOrExpense = async (req, res, next) => {
   try {
     let entryOrExitId = req.params.id;
 
@@ -59,7 +59,9 @@ const updateIncomeOrExpenses = async (req, res, next) => {
       entryOrExit.update(newData);
     });
 
-    res.json({ mensaje: "The income or expense has been successfully updated" });
+    res.json({
+      mensaje: "The income or expense has been successfully updated",
+    });
     // res.json(incomeExpenseUpdate);
   } catch (error) {
     console.log(error);
@@ -82,8 +84,8 @@ const deleteIncomeOrExpenses = async (req, res, next) => {
 
 export {
   createIncomeOrExpense,
-  getIncomeOrExpenses,
-  getEntryOrExit,
+  getAllIncomeOrExpenses,
+  getIncomeOrExpense,
   updateIncomeOrExpenses,
   deleteIncomeOrExpenses,
 };

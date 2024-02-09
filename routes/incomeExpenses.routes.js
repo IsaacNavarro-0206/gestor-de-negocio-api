@@ -1,19 +1,19 @@
 import express from "express";
 import {
   createIncomeOrExpense,
-  getIncomeOrExpenses,
-  getEntryOrExit,
+  getAllIncomeOrExpenses,
+  getIncomeOrExpense,
   updateIncomeOrExpenses,
   deleteIncomeOrExpenses,
 } from "../controllers/incomeExpensesController.js";
 
 const router = express.Router();
 
-router.route("/").post(createIncomeOrExpense).get(getIncomeOrExpenses);
+router.route("/").post(createIncomeOrExpense).get(getAllIncomeOrExpenses);
 
 router
   .route("/:id")
-  .get(getEntryOrExit)
+  .get(getIncomeOrExpense)
   .put(updateIncomeOrExpenses)
   .delete(deleteIncomeOrExpenses);
 

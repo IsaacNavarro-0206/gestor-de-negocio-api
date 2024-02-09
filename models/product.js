@@ -17,7 +17,7 @@ export const Product = db.define('producto', {
   cantidad: {
     type: DataTypes.INTEGER
   },
-  fecha_registro: {
-    type: DataTypes.DATE
-  }
+  // fecha_registro: {
+  //   type: DataTypes.DATE
+  // }
 });

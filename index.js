@@ -2,7 +2,8 @@ import express from "express"; // module
 //import router from './routes/index.js';
 import { sequelize as db } from "./database/db.js";
 import routerIncomeExpenses from "./routes/incomeExpenses.routes.js";
-import routuerProduct from "./routes/product.routes.js";
+import routerProduct from "./routes/product.routes.js";
+import routerCategoryProduct from "./routes/categoryProduct.routes.js";
 import bodyParser from "body-parser";
 //import cors from 'cors';
 
@@ -25,15 +26,15 @@ async function main() {
       .catch((error) => console.log(error));
 
     // Crear la(s) tabla(s)
-    // await db.sync({ force: true });
+    await db.sync({ force: false });
 
     // Habilitar body parser
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
 
     app.use("/incomeExpenses", routerIncomeExpenses);
-    app.use("/product", routuerProduct);
-    app.use("/categoryProduct", routuerProduct);
+    app.use("/product", routerProduct);
+    app.use("/categoryProduct", routerCategoryProduct);
   } catch (error) {
     console.error("no se puede conectar a la base de datos", error);
   }
